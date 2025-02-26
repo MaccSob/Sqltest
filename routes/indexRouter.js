@@ -20,6 +20,12 @@ indexRouter.get('/', (req, res) => {
     res.render("new", { title: "Create your message!" });
 
   });
- 
+  indexRouter.post("/new", function(req, res ) {
+    const data = req.body;
+
+    console.log("Text: ", data.messageText);
+    console.log("User: ", data.messageUser);
+    console.log("Date: ", new Date());
+  });
 
   module.exports = indexRouter;
